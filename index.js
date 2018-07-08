@@ -1,4 +1,4 @@
-module.exports = function falseForENOENT (callback) {
+module.exports = function falseENOENT (callback) {
   return function (/* arguments */) {
     var error = arguments[0]
     if (error) {

@@ -1,6 +1,6 @@
 var assert = require('assert')
 var fs = require('fs')
-var falseForENOENT = require('./')
+var falseENOENT = require('./')
 
 // Sanity Test
 
@@ -10,21 +10,21 @@ fs.readFile('nonexistent', function (error, result) {
 
 // Yields false for ENOENT Error
 
-fs.readFile('nonexistent', falseForENOENT(function (error, result) {
+fs.readFile('nonexistent', falseENOENT(function (error, result) {
   assert.ifError(error)
   assert.strictEqual(result, false)
 }))
 
 // Yields Results
 
-fs.readFile('package.json', falseForENOENT(function (error, result) {
+fs.readFile('package.json', falseENOENT(function (error, result) {
   assert.ifError(error)
   assert(Buffer.isBuffer(result))
 }))
 
 // Multiple Results
 
-falseForENOENT(function (error, a, b) {
+falseENOENT(function (error, a, b) {
   assert.ifError(error)
   assert.equal(a, 1)
   assert.equal(b, 2)

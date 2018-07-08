@@ -1,9 +1,9 @@
 ```javascript
 var assert = require('assert')
 var fs = require('fs')
-var falseForENOENT = require('false-for-enoent')
+var falseENOENT = require('false-enoent')
 
-fs.readFile('nonexistent', falseForENOENT(function (error, result) {
+fs.readFile('nonexistent', falseENOENT(function (error, result) {
   assert.ifError(error)
   assert.strictEqual(result, false)
 }))
