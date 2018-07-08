@@ -1,6 +1,6 @@
 {
   "name": "false-enoent",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "wrap a callback to yield false results instead of ENOENT errors",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
   "repository": "kemitchell/false-enoent.js",
